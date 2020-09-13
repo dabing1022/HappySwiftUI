@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  HappySwiftUI
+
+  Created by ChildhoodAndy on 2020/9/6.
+  Copyright © 2020 HappyCoding. All rights reserved.
+*/
+
+"Tutorials" = "教程";
+"Awesome" = "真棒";
+"History" = "历史";
+"Settings" = "设置";
+"Languages" = "语言";
+"AppLanguage" = "应用语言";
+"Automatic" = "自动";
+"WWDC" = "WWDC";
+"Apple" = "Apple";
+"Demo" = "例子";
+"Code" = "代码";

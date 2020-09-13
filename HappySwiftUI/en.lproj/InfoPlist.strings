@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  HappySwiftUI
+
+  Created by ChildhoodAndy on 2020/9/6.
+  Copyright © 2020 HappyCoding. All rights reserved.
+*/
+
+CFBundleDisplayName = "HappySwiftUI";
