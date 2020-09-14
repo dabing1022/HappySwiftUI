@@ -7,54 +7,86 @@
 //
 
 import Foundation
+import Highlightr
 import UIKit
-// import Highlightr
 
 class CodeEditorView: UIView {
-    var textView: UITextView!
+    var sourceCode: String? {
+        willSet {
+            textView.isHidden = true
+        }
+        didSet {
+            textView.text = sourceCode
+        }
+    }
 
-//    var highlightr : Highlightr!
-//    var textStorage : CodeAttributedString!
+    var codeTheme: String = "Pojoaque" {
+        didSet {
+            currentTheme = codeTheme
+            highlightr.setTheme(to: codeTheme)
+        }
+    }
 
-    var currentLanguage: String!
-    var currentTheme: String!
+    private var textView: UITextView!
+    private var highlightr: Highlightr!
+    private let textStorage = CodeAttributedString()
+    private var currentLanguage: String!
+    private var currentTheme: String = "Pojoaque"
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(frame: CGRect = .zero, sourceCode: String?) {
+        self.init(frame: frame)
 
         currentLanguage = "Swift"
         currentTheme = "Pojoaque"
 
-//        let layoutManager = NSLayoutManager()
-//        textStorage = CodeAttributedString()
-//        textStorage.addLayoutManager(layoutManager)
+        textStorage.highlightDelegate = self
+        textStorage.language = currentLanguage.lowercased()
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
 
-//        let width = ZZFrame.screenWidth()
-//        let width = 400
-//        let height = CGFloat.greatestFiniteMagnitude
+        let textContainer = NSTextContainer(size: bounds.size)
+        layoutManager.addTextContainer(textContainer)
 
-//        let textContainer = NSTextContainer(size: CGSize(width: width, height: height))
-//        layoutManager.addTextContainer(textContainer)
+        textView = UITextView(frame: bounds, textContainer: textContainer)
+        textView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        textView.autocorrectionType = UITextAutocorrectionType.no
+        textView.autocapitalizationType = UITextAutocapitalizationType.none
+        textView.textColor = UIColor(white: 0.8, alpha: 1.0)
+        textView.inputAccessoryView = nil
+        textView.alwaysBounceVertical = true
+        textView.keyboardDismissMode = .onDrag
+        addSubview(textView)
 
-//        textView = UITextView(frame: self.view.bounds, textContainer: textContainer)
-//        textView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        textView.autocorrectionType = UITextAutocorrectionType.no
-//        textView.autocapitalizationType = UITextAutocapitalizationType.none
-//        textView.textColor = UIColor(white: 0.8, alpha: 1.0)
-//        textView.inputAccessoryView = nil
-//        textView.keyboardDismissMode = .onDrag
-//        self.addSubview(textView)
+        textView.text = sourceCode
+        highlightr = textStorage.highlightr
 
-//        highlightr = textStorage.highlightr
-//
-//        let font = RPFont(name: CMUSerDefaults.codeFont(), size: CGFloat(CMUSerDefaults.codeFontSize()))!
-//        textStorage.language = currentLanguage.lowercased()
-//        highlightr.setTheme(to: currentTheme)
-//        highlightr.theme.setCodeFont(font)
-//        textView.text = originText
+        highlightr.setTheme(to: currentTheme)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        textView.frame = bounds
+        textView.layoutManager.textContainers.forEach { container in
+            container.size = bounds.size
+        }
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func updateColors() {
+        textView.backgroundColor = highlightr.theme.themeBackgroundColor
+    }
+}
+
+extension CodeEditorView: HighlightDelegate {
+    func didHighlight(_ range: NSRange, success: Bool) {
+        textView.isHidden = !success
     }
 }

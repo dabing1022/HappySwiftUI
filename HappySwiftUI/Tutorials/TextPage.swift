@@ -27,7 +27,7 @@ struct TextPage: View {
             if seg == 0 {
                 TextPageDemo()
             } else if seg == 1 {
-                Text("source code")
+                TextPageCode()
             }
 
             Spacer()
@@ -71,6 +71,37 @@ struct TextPageDemo: View {
                 " Use them to present your app’s content onscreen.")
                 .lineLimit(nil)
         }
+    }
+}
+
+struct TextPageCode: View {
+    var body: some View {
+        let code = """
+Text("github")
+    .underline(true, color: Color.gray)
+    .font(.system(size: 16, design: .serif)).onTapGesture {
+        print("github")
+    }
+
+Text("Views and controls are the visual building blocks of your app’s user interface." +
+    " Use them to present your app’s content onscreen.")
+    .lineLimit(nil)
+Text("github")
+    .underline(true, color: Color.gray)
+    .font(.system(size: 16, design: .serif)).onTapGesture {
+        print("github")
+    }
+
+Text("Views and controls are the visual building blocks of your app’s user interface." +
+    " Use them to present your app’s content onscreen.")
+    .lineLimit(nil)
+Text("github")
+    .underline(true, color: Color.gray)
+    .font(.system(size: 16, design: .serif)).onTapGesture {
+        print("github")
+    }
+"""
+        return CodeEditor(sourceCode: code)
     }
 }
 

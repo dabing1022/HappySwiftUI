@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct CodeEditor: UIViewRepresentable {
+    var sourceCode: String?
+    
     func makeUIView(context: Context) -> CodeEditorView {
-        return CodeEditorView(frame: .zero)
+        return CodeEditorView(frame: .zero, sourceCode: sourceCode)
     }
 
     func updateUIView(_ uiView: CodeEditorView, context: Context) {
+        uiView.sourceCode = sourceCode
     }
 }

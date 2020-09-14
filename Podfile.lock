@@ -1,0 +1,21 @@
+PODS:
+  - Highlightr (1.1.0)
+
+DEPENDENCIES:
+  - "Highlightr (from `git@github.com:brunophilipe/Highlightr.git`)"
+
+EXTERNAL SOURCES:
+  Highlightr:
+    :git: "git@github.com:brunophilipe/Highlightr.git"
+
+CHECKOUT OPTIONS:
+  Highlightr:
+    :commit: 437d4302ba85faeeaa75ba47939d066fdfc101a5
+    :git: "git@github.com:brunophilipe/Highlightr.git"
+
+SPEC CHECKSUMS:
+  Highlightr: 09ddfc99e24e4ebd81dd711f712f1620f199f8fa
+
+PODFILE CHECKSUM: 90a96df8e12b177dc167a76c4ff5b8314e06b2ba
+
+COCOAPODS: 1.7.4
