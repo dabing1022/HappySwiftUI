@@ -1,0 +1,14 @@
+{
+    "tutorials": [
+        {
+            "name": "SwiftUI-Cheat-Sheet",
+            "author": "SimpleBoilerplates",
+            "git": "https://github.com/SimpleBoilerplates/SwiftUI-Cheat-Sheet"
+        },
+        {
+            "name": "swiftui",
+            "author": "ygit",
+            "git": "https://github.com/ygit/swiftui"
+        }
+    ]
+}

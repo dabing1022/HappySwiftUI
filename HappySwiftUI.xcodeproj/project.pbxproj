@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,9 @@
 		BDC78BDF250E769B00F9C816 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BDE250E769A00F9C816 /* CodeEditor.swift */; };
 		BDC78BE1250E77B800F9C816 /* CodeEditorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BE0250E77B800F9C816 /* CodeEditorVIew.swift */; };
 		BDC78BE4250E79B100F9C816 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BE3250E79B100F9C816 /* MapView.swift */; };
+		BDD7F1DE2514F6B000C28B05 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7F1DD2514F6B000C28B05 /* TextEditor.swift */; };
+		BDD7F1E22514F9AC00C28B05 /* PickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7F1E12514F9AB00C28B05 /* PickerPage.swift */; };
+		BDD7F1E72515069C00C28B05 /* tutorials_github.json in Resources */ = {isa = PBXBuildFile; fileRef = BDD7F1E62515069C00C28B05 /* tutorials_github.json */; };
 		F210E6A26CAB63277B4983B3 /* Pods_HappySwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9A926D37FF2CF750A9D5EB /* Pods_HappySwiftUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		BDC78BDE250E769A00F9C816 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		BDC78BE0250E77B800F9C816 /* CodeEditorVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorVIew.swift; sourceTree = "<group>"; };
 		BDC78BE3250E79B100F9C816 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BDD7F1DD2514F6B000C28B05 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
+		BDD7F1E12514F9AB00C28B05 /* PickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPage.swift; sourceTree = "<group>"; };
+		BDD7F1E62515069C00C28B05 /* tutorials_github.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tutorials_github.json; sourceTree = "<group>"; };
 		D3645CC9E4C1273B8E2C1481 /* Pods-HappySwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappySwiftUI.release.xcconfig"; path = "Target Support Files/Pods-HappySwiftUI/Pods-HappySwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +81,6 @@
 				1D117159C5B7C9C78D9B4AED /* Pods-HappySwiftUI.debug.xcconfig */,
 				D3645CC9E4C1273B8E2C1481 /* Pods-HappySwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,6 +113,7 @@
 		BD1AA6A02503C65000BE5BC5 /* HappySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BDD7F1E52515065F00C28B05 /* Resources */,
 				BDC78BE2250E79B100F9C816 /* SupportingViews */,
 				BDC78BDD250E768D00F9C816 /* CodeEditor */,
 				BD6B604A250519A00096554E /* Localizable */,
@@ -141,6 +147,8 @@
 			children = (
 				BD1AA6B62503CC8B00BE5BC5 /* TutorialHomePage.swift */,
 				BDC78BDB250E642800F9C816 /* TextPage.swift */,
+				BDD7F1DD2514F6B000C28B05 /* TextEditor.swift */,
+				BDD7F1E12514F9AB00C28B05 /* PickerPage.swift */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -185,6 +193,14 @@
 				BDC78BE3250E79B100F9C816 /* MapView.swift */,
 			);
 			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		BDD7F1E52515065F00C28B05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7F1E62515069C00C28B05 /* tutorials_github.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +268,7 @@
 				BD1AA6AE2503C65500BE5BC5 /* LaunchScreen.storyboard in Resources */,
 				BD6B6040250513910096554E /* InfoPlist.strings in Resources */,
 				BD1AA6AB2503C65500BE5BC5 /* Preview Assets.xcassets in Resources */,
+				BDD7F1E72515069C00C28B05 /* tutorials_github.json in Resources */,
 				BD1AA6A82503C65500BE5BC5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6B604E25052A240096554E /* LanguagesView.swift in Sources */,
+				BDD7F1DE2514F6B000C28B05 /* TextEditor.swift in Sources */,
 				BDC78BDC250E642800F9C816 /* TextPage.swift in Sources */,
 				BD1AA6A22503C65000BE5BC5 /* AppDelegate.swift in Sources */,
 				BD6B604C250519DC0096554E /* Localizable.swift in Sources */,
@@ -317,6 +335,7 @@
 				BD06FA43250E5B5800EAC772 /* GlobalData.swift in Sources */,
 				BD6B603C2503D55D0096554E /* SafariView.swift in Sources */,
 				BDC78BDF250E769B00F9C816 /* CodeEditor.swift in Sources */,
+				BDD7F1E22514F9AC00C28B05 /* PickerPage.swift in Sources */,
 				BD1AA6B72503CC8B00BE5BC5 /* TutorialHomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +499,7 @@
 				DEVELOPMENT_TEAM = 6RUU9PN7NF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HappySwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +521,7 @@
 				DEVELOPMENT_TEAM = 6RUU9PN7NF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HappySwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
