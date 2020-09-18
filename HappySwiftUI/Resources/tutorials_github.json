@@ -1,4 +1,5 @@
 {
+    "search_url": "https://github.com/search?o=desc&q=swiftui&s=stars&type=Repositories",
     "tutorials": [
         {
             "name": "SwiftUI-Cheat-Sheet",

@@ -1,0 +1,60 @@
+{
+    "title": "View Layout and Presentation",
+    "desc": "Combine views in stacks, generate groups and lists of views dynamically, and define view presentations and hierarchy.",
+    "parts": [
+        {
+            "part_name": "Overview",
+            "part_desc": "Use stacks and lists to lay out the views of your user interface. You can combine static views with views that are dynamically generated from collections of data. All container views update and adjust the positions of their children in response to changes in content or interface dimensions."
+        },
+        {
+            "part_name": "Topics",
+            "subparts": [
+                {
+                    "part_name": "Essentials",
+                    "contents": [
+                        {
+                            "type": "link",
+                            "title": "Building Lists and Navigation",
+                            "url": "https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation",
+                            "desc": "With the basic landmark detail view set up, you need to provide a way for users to see the full list of landmarks, and to view the details about each location."
+                        },
+                        {
+                            "type": "link",
+                            "title": "Composing Complex Interfaces",
+                            "url": "https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces",
+                            "desc": "The home screen for Landmarks shows a scrolling list of categories, with horizontally scrolling landmarks within each category. As you build this primary navigation, you’ll explore how composed views can adapt to different device sizes and orientations."
+                        }
+                    ]
+                },
+                {
+                    "part_name": "Stacks",
+                    "contents": [
+                        {
+                            "type": "feature",
+                            "title": "HStack",
+                            "desc": "A view that arranges its children in a horizontal line."
+                        }
+                    ]
+                }
+                
+            ]
+        },
+        {
+            "part_name": "See Also",
+            "subparts": [
+                {
+                    "part_name": "User Interface",
+                    "contents": [
+                        {
+                            "type": "link",
+                            "title": "Views and Controls",
+                            "url": "https://developer.apple.com/documentation/swiftui/views-and-controls",
+                            "desc": "Present your content onscreen and handle user interactions."
+
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
