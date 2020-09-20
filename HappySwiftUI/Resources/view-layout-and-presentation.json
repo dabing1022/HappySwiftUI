@@ -1,4 +1,5 @@
 {
+    "origin_url": "https://developer.apple.com/documentation/swiftui/view-layout-and-presentation",
     "title": "View Layout and Presentation",
     "desc": "Combine views in stacks, generate groups and lists of views dynamically, and define view presentations and hierarchy.",
     "parts": [

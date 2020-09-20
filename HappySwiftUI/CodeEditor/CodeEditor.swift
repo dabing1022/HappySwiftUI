@@ -8,6 +8,21 @@
 
 import SwiftUI
 
+struct CodeSharedEditor: UIViewRepresentable {
+    var sourceCode: String?
+    
+    func makeUIView(context: Context) -> CodeEditorView {
+        return CodeEditorView.shared
+    }
+
+    func updateUIView(_ uiView: CodeEditorView, context: Context) {
+        if (uiView.sourceCode != sourceCode) {
+            uiView.sourceCode = sourceCode
+        }
+    }
+}
+
+
 struct CodeEditor: UIViewRepresentable {
     var sourceCode: String?
     

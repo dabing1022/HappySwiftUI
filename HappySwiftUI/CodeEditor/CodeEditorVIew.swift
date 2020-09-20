@@ -11,6 +11,8 @@ import Highlightr
 import UIKit
 
 class CodeEditorView: UIView {
+    static let shared = CodeEditorView(frame: .zero, sourceCode: nil)
+    
     var sourceCode: String? {
         willSet {
             textView.isHidden = true
@@ -26,6 +28,7 @@ class CodeEditorView: UIView {
             highlightr.setTheme(to: codeTheme)
         }
     }
+    
 
     private var textView: UITextView!
     private var highlightr: Highlightr!

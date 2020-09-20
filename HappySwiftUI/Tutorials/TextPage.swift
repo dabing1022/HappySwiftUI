@@ -103,7 +103,7 @@ Text("github")
         print("github")
     }
 """
-        return CodeEditor(sourceCode: code)
+        return CodeSharedEditor(sourceCode: code)
     }
 }
 

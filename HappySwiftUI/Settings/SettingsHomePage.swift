@@ -13,21 +13,51 @@ struct SettingsHomePage: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section {
-                    NavigationLink(destination: LanguagesView().environmentObject(self.languages)) {
-                        HStack {
-                            Text(Localizable.appLanguage, bundle: languages.bundle)
-                            Spacer()
-                            Text(Localizable.identifierDisplayName())
-                        }
+            VStack {
+                AppInfoView()
+                SettingList()
+            }
+            .navigationBarTitle(Text(Localizable.setting, bundle: languages.bundle), displayMode: .large)
+        }
+    }
+}
+
+struct AppInfoView: View {
+    var body: some View {
+        HStack {
+            Image("AppLogo")
+                .clipShape(Circle())
+                .padding()
+            VStack {
+                Text("Version 1.0.0")
+            }
+            Button("升级历史") {
+                
+            }
+            .padding()
+            .background(Color.red)
+            .cornerRadius(4)
+            Spacer()
+        }
+    }
+}
+
+struct SettingList: View {
+    @EnvironmentObject var languages: LanguagesData
+    
+    var body: some View {
+        List {
+            Section {
+                NavigationLink(destination: LanguagesView().environmentObject(self.languages)) {
+                    HStack {
+                        Text(Localizable.appLanguage, bundle: languages.bundle)
+                        Spacer()
+                        Text(Localizable.identifierDisplayName())
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
-            .navigationBarTitle(Text(Localizable.setting, bundle: languages.bundle), displayMode: .large)
         }
+        .listStyle(InsetGroupedListStyle())
     }
 }
 
