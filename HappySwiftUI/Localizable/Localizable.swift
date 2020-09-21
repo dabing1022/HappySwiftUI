@@ -22,6 +22,7 @@ struct Localizable {
     static let apple: LocalizedStringKey = "Apple"
     static let demo: LocalizedStringKey = "Demo"
     static let code: LocalizedStringKey = "Code"
+    static let codeTheme: LocalizedStringKey = "Code Theme"
 
     enum SupportLanguages: String, CaseIterable, Identifiable {
         var id: String {

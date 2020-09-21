@@ -22,7 +22,7 @@ struct LanguagesView: View {
                     self.languages.identifier = language.rawValue
                 }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(Text(verbatim: Localizable.identifierDisplayName()), displayMode: .inline)
         .environment(\.horizontalSizeClass, .regular)
     }

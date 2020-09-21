@@ -25,6 +25,9 @@
 		BDC78BDF250E769B00F9C816 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BDE250E769A00F9C816 /* CodeEditor.swift */; };
 		BDC78BE1250E77B800F9C816 /* CodeEditorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BE0250E77B800F9C816 /* CodeEditorVIew.swift */; };
 		BDC78BE4250E79B100F9C816 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC78BE3250E79B100F9C816 /* MapView.swift */; };
+		BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */; };
+		BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E22518EC4200C09837 /* CodeTheme.swift */; };
+		BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */; };
 		BDD7F1DE2514F6B000C28B05 /* TextEditorPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7F1DD2514F6B000C28B05 /* TextEditorPage.swift */; };
 		BDD7F1E22514F9AC00C28B05 /* PickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7F1E12514F9AB00C28B05 /* PickerPage.swift */; };
 		BDD7F1E72515069C00C28B05 /* tutorials_github.json in Resources */ = {isa = PBXBuildFile; fileRef = BDD7F1E62515069C00C28B05 /* tutorials_github.json */; };
@@ -61,6 +64,9 @@
 		BDC78BDE250E769A00F9C816 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		BDC78BE0250E77B800F9C816 /* CodeEditorVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorVIew.swift; sourceTree = "<group>"; };
 		BDC78BE3250E79B100F9C816 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeThemePickPage.swift; sourceTree = "<group>"; };
+		BDD253E22518EC4200C09837 /* CodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTheme.swift; sourceTree = "<group>"; };
+		BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorHelper.swift; sourceTree = "<group>"; };
 		BDD7F1DD2514F6B000C28B05 /* TextEditorPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorPage.swift; sourceTree = "<group>"; };
 		BDD7F1E12514F9AB00C28B05 /* PickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPage.swift; sourceTree = "<group>"; };
 		BDD7F1E62515069C00C28B05 /* tutorials_github.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tutorials_github.json; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			children = (
 				BD6B60382503D1380096554E /* SettingsHomePage.swift */,
 				BD6B604D25052A240096554E /* LanguagesView.swift */,
+				BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -194,6 +201,8 @@
 			children = (
 				BDC78BDE250E769A00F9C816 /* CodeEditor.swift */,
 				BDC78BE0250E77B800F9C816 /* CodeEditorVIew.swift */,
+				BDD253E22518EC4200C09837 /* CodeTheme.swift */,
+				BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */,
 			);
 			path = CodeEditor;
 			sourceTree = "<group>";
@@ -346,12 +355,15 @@
 				BDC78BE1250E77B800F9C816 /* CodeEditorVIew.swift in Sources */,
 				BD1AA6A42503C65000BE5BC5 /* SceneDelegate.swift in Sources */,
 				BDD7F1EE2517954200C28B05 /* LazyVStackPage.swift in Sources */,
+				BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */,
 				BD1AA6A62503C65000BE5BC5 /* ContentView.swift in Sources */,
 				BD6B60392503D1380096554E /* SettingsHomePage.swift in Sources */,
 				BD06FA43250E5B5800EAC772 /* GlobalData.swift in Sources */,
 				BD6B603C2503D55D0096554E /* SafariView.swift in Sources */,
+				BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */,
 				BDC78BDF250E769B00F9C816 /* CodeEditor.swift in Sources */,
 				BDD7F1E22514F9AC00C28B05 /* PickerPage.swift in Sources */,
+				BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */,
 				BD1AA6B72503CC8B00BE5BC5 /* TutorialHomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

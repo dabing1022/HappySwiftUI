@@ -13,10 +13,7 @@ struct SettingsHomePage: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                AppInfoView()
-                SettingList()
-            }
+            SettingList()
             .navigationBarTitle(Text(Localizable.setting, bundle: languages.bundle), displayMode: .large)
         }
     }
@@ -44,15 +41,26 @@ struct AppInfoView: View {
 
 struct SettingList: View {
     @EnvironmentObject var languages: LanguagesData
+    @EnvironmentObject var codeThemes: CodeThemeData
     
     var body: some View {
         List {
-            Section {
-                NavigationLink(destination: LanguagesView().environmentObject(self.languages)) {
+            Section(header: AppInfoView()) {
+                NavigationLink(destination: LanguagesView()) {
                     HStack {
                         Text(Localizable.appLanguage, bundle: languages.bundle)
                         Spacer()
                         Text(Localizable.identifierDisplayName())
+                    }
+                }
+            }
+            
+            Section {
+                NavigationLink(destination: CodeThemePickPage()) {
+                    HStack {
+                        Text(Localizable.codeTheme, bundle: languages.bundle)
+                        Spacer()
+                        Text(codeThemes.currentTheme)
                     }
                 }
             }

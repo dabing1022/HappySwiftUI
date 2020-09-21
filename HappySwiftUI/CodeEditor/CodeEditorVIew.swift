@@ -22,25 +22,27 @@ class CodeEditorView: UIView {
         }
     }
 
-    var codeTheme: String = "Pojoaque" {
+    var codeTheme: String = CodeThemeData.userTheme() {
         didSet {
-            currentTheme = codeTheme
             highlightr.setTheme(to: codeTheme)
+            updateColors()
         }
     }
-    
 
     private var textView: UITextView!
     private var highlightr: Highlightr!
     private let textStorage = CodeAttributedString()
     private var currentLanguage: String!
-    private var currentTheme: String = "Pojoaque"
+    public var isEditable: Bool = false {
+        didSet {
+            textView.isEditable = isEditable
+        }
+    }
 
     convenience init(frame: CGRect = .zero, sourceCode: String?) {
         self.init(frame: frame)
 
         currentLanguage = "Swift"
-        currentTheme = "Pojoaque"
 
         textStorage.highlightDelegate = self
         textStorage.language = currentLanguage.lowercased()
@@ -58,12 +60,15 @@ class CodeEditorView: UIView {
         textView.inputAccessoryView = nil
         textView.alwaysBounceVertical = true
         textView.keyboardDismissMode = .onDrag
+        textView.isEditable = isEditable
         addSubview(textView)
 
         textView.text = sourceCode
         highlightr = textStorage.highlightr
 
-        highlightr.setTheme(to: currentTheme)
+        highlightr.setTheme(to: codeTheme)
+        
+        updateColors()
     }
 
     override init(frame: CGRect) {

@@ -13,10 +13,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     private var languages = LanguagesData()
+    private var codeThemes = CodeThemeData()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        codeThemes.initCodeTheme()
+        
         let contentView = ContentView()
             .environmentObject(languages)
+            .environmentObject(codeThemes)
             .environment(\.locale, .init(identifier: self.languages.identifier))
 
         if let windowScene = scene as? UIWindowScene {
