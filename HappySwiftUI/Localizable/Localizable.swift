@@ -12,6 +12,7 @@ import Combine
 struct Localizable {
     static let tutorials: LocalizedStringKey = "Tutorials"
     static let awesome: LocalizedStringKey = "Awesome"
+    static let explore: LocalizedStringKey = "Explore"
     static let history: LocalizedStringKey = "History"
     static let setting: LocalizedStringKey = "Settings"
     static let languages: LocalizedStringKey = "Languages"

@@ -20,8 +20,8 @@ struct ContentView: View {
                 }
             Text("The content of the first view")
                 .tabItem {
-                    Image(systemName: "hand.thumbsup")
-                    Text(Localizable.awesome, bundle: languages.bundle)
+                    Image(systemName: "safari")
+                    Text(Localizable.explore, bundle: languages.bundle)
                 }
             Text("The content of the first view")
                 .tabItem {
