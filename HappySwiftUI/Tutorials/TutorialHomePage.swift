@@ -65,7 +65,7 @@ struct TutorialHomePageTextSection: View {
         ) {
             NavigationLink(destination: TextPage()) {
                 VStack(alignment: .leading) {
-                    Text("Text")
+                    Text(verbatim: "Text")
                         .font(.system(.body))
                     Spacer()
                     Text("A view that displays one or more lines of read-only text.")
@@ -148,12 +148,31 @@ struct TutorialHomePageValueSelectorsSection: View {
 }
 
 struct TutorialHomePageValueIndicatorsSection: View {
+    @State private var showingAlert = false
     var body: some View {
         Section(header: Text(verbatim: "Value Indicators").font(.system(.headline))) {
-            Text("ProgressView")
-            Text("Gauge")
-            Text("Label")
-            Text("Link")
+            Text(verbatim: "ProgressView")
+            HStack {
+                Text(verbatim: "Gauge")
+                    .foregroundColor(Color.gray)
+                Spacer()
+            }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.showingAlert = true
+                }
+                .alert(isPresented: $showingAlert) {
+                    // TODO: 国际化
+                    Alert(title: Text("Tip"), message: Text("GauGe Availability: watchOS"), dismissButton: .default(Text("OK"))
+                          
+                    )
+                }
+            NavigationLink(destination: LabelPage()) {
+                Text(verbatim: "Label")
+            }
+            NavigationLink(destination: LinkPage()) {
+                Text(verbatim: "Link")
+            }
         }
     }
 }
@@ -161,9 +180,9 @@ struct TutorialHomePageValueIndicatorsSection: View {
 struct TutorialHomePageFontsLocalizationSection: View {
     var body: some View {
         Section(header: Text(verbatim: "Fonts and Localization").font(.system(.headline))) {
-            Text("Font")
-            Text("ScaledMetric")
-            Text("LocalizedStringKey")
+            Text(verbatim: "Font")
+            Text(verbatim: "ScaledMetric")
+            Text(verbatim: "LocalizedStringKey")
         }
     }
 }

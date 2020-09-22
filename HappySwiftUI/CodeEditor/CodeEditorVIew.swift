@@ -21,10 +21,23 @@ class CodeEditorView: UIView {
             textView.text = sourceCode
         }
     }
+    
+    var fontName: String = CodeThemeData.userFontName() {
+        didSet {
+            render(fontName: fontName, fontSize: fontSize)
+        }
+    }
+    
+    var fontSize: Int = CodeThemeData.userFontSize() {
+        didSet {
+            render(fontName: fontName, fontSize: fontSize)
+        }
+    }
 
     var codeTheme: String = CodeThemeData.userTheme() {
         didSet {
             highlightr.setTheme(to: codeTheme)
+            render(fontName: fontName, fontSize: fontSize)
             updateColors()
         }
     }
@@ -49,7 +62,7 @@ class CodeEditorView: UIView {
         let layoutManager = NSLayoutManager()
         textStorage.addLayoutManager(layoutManager)
 
-        let textContainer = NSTextContainer(size: bounds.size)
+        let textContainer = NSTextContainer(size: textContainerSize())
         layoutManager.addTextContainer(textContainer)
 
         textView = UITextView(frame: bounds, textContainer: textContainer)
@@ -67,7 +80,7 @@ class CodeEditorView: UIView {
         highlightr = textStorage.highlightr
 
         highlightr.setTheme(to: codeTheme)
-        
+        render(fontName: fontName, fontSize: fontSize)
         updateColors()
     }
 
@@ -79,9 +92,12 @@ class CodeEditorView: UIView {
         super.layoutSubviews()
 
         textView.frame = bounds
-        textView.layoutManager.textContainers.forEach { container in
-            container.size = bounds.size
+        textStorage.layoutManagers.forEach { (layoutManager) in
+            layoutManager.textContainers.forEach { (textContainer) in
+                textContainer.size = textContainerSize()
+            }
         }
+
     }
 
     required init?(coder: NSCoder) {
@@ -90,6 +106,16 @@ class CodeEditorView: UIView {
 
     private func updateColors() {
         textView.backgroundColor = highlightr.theme.themeBackgroundColor
+    }
+    
+    private func render(fontName: String, fontSize: Int = CodeThemeData.defaultFontSize) {
+        highlightr.theme.setCodeFont(RPFont(name: fontName, size: CGFloat(fontSize))!)
+        // 走 textStorage highlight 触发字体渲染
+        textStorage.language = textStorage.language
+    }
+    
+    private func textContainerSize() -> CGSize {
+        CGSize(width: bounds.size.width, height: CGFloat.greatestFiniteMagnitude)
     }
 }
 
