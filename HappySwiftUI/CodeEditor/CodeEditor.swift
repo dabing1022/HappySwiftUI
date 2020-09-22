@@ -28,6 +28,7 @@ struct CodeSharedEditor: UIViewRepresentable {
 
 
 struct CodeEditor: UIViewRepresentable {
+    @EnvironmentObject var codeThemes: CodeThemeData
     var sourceCode: String?
     
     func makeUIView(context: Context) -> CodeEditorView {
@@ -35,6 +36,11 @@ struct CodeEditor: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: CodeEditorView, context: Context) {
-        uiView.sourceCode = sourceCode
+        if (uiView.sourceCode != sourceCode) {
+            uiView.sourceCode = sourceCode
+        }
+        if (uiView.codeTheme != codeThemes.currentTheme) {
+            uiView.codeTheme = codeThemes.currentTheme
+        }
     }
 }

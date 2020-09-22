@@ -15,7 +15,7 @@ struct CodeThemePickPage: View {
     var body: some View {
         VStack {
             Text(codeThemes.currentTheme).font(.headline).padding(.top, 8)
-            CodeSharedEditor(sourceCode: CodeEditorHelper.sampleCode)
+            CodeEditor(sourceCode: CodeEditorHelper.sampleCode)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal)
             
