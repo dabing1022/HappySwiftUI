@@ -9,9 +9,23 @@
 import SwiftUI
 
 struct LinkPage: View {
+    @State private var showSafari = false
+    
+    let destinationUrl = URL(string: "https://www.github.com/dabing1022")!
     var body: some View {
-        Link("Jump to app author github homepage.",
-              destination: URL(string: "https://www.github.com/dabing1022")!)
+        VStack {
+            Link("Link: Jump to app author github homepage.",
+                 destination: destinationUrl)
+                .padding()
+
+            Button("Button: Jump to app author github homepage.") {
+                self.showSafari = true
+            }
+            .padding()
+            .fullScreenCover(isPresented: $showSafari) {
+                SafariView(url: destinationUrl)
+            }
+        }
         .navigationBarTitle(Text(verbatim: "LinkPage"), displayMode: .inline)
     }
     
