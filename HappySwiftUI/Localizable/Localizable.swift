@@ -23,6 +23,8 @@ struct Localizable {
     static let demo: LocalizedStringKey = "Demo"
     static let code: LocalizedStringKey = "Code"
     static let codeTheme: LocalizedStringKey = "Code Theme"
+    static let codeFont: LocalizedStringKey = "Code Font"
+    static let codeFontSize: LocalizedStringKey = "Code FontSize"
     static let theme: LocalizedStringKey = "Theme"
     static let font: LocalizedStringKey = "Font"
     static let fontSize: LocalizedStringKey = "FontSize"

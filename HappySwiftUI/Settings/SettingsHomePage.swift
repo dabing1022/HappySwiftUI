@@ -56,11 +56,25 @@ struct SettingList: View {
             }
             
             Section {
-                NavigationLink(destination: CodeThemePickPage()) {
+                NavigationLink(destination: CodeThemePickPage(settingName: Localizable.theme)) {
                     HStack {
                         Text(Localizable.codeTheme, bundle: languages.bundle)
                         Spacer()
                         Text(codeThemes.currentTheme)
+                    }
+                }
+                NavigationLink(destination: CodeThemePickPage(settingName: Localizable.font)) {
+                    HStack {
+                        Text(Localizable.codeFont, bundle: languages.bundle)
+                        Spacer()
+                        Text(codeThemes.currentFontName)
+                    }
+                }
+                NavigationLink(destination: CodeThemePickPage(settingName: Localizable.fontSize)) {
+                    HStack {
+                        Text(Localizable.codeFontSize, bundle: languages.bundle)
+                        Spacer()
+                        Text("\(codeThemes.currentFontSize)")
                     }
                 }
             }

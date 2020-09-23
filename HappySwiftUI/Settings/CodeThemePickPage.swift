@@ -13,10 +13,19 @@ import SwiftUI
 /// 字体
 /// 字体大小
 struct CodeThemePickPage: View {
+    var settingName: LocalizedStringKey = Localizable.theme
     @EnvironmentObject var languages: LanguagesData
     @EnvironmentObject var codeThemes: CodeThemeData
     
     @State private var settingIndex = 0
+    @State private var fontSizeIndex = CodeThemeData.availableFontSizes.firstIndex(of: CodeThemeData.userFontSize()) ?? 0
+    
+    init(settingName: LocalizedStringKey = Localizable.theme) {
+        self.settingName = settingName
+        let index = CodeThemeData.themeSettings.firstIndex(of: settingName) ?? 0
+        _settingIndex = State(initialValue: index)
+    }
+    
     var body: some View {
         VStack {
             Text(codeThemes.currentTheme).font(.headline).padding(.top, 8)
@@ -45,9 +54,12 @@ struct CodeThemePickPage: View {
                 })
                 .pickerStyle(WheelPickerStyle())
             } else { // font size
-                Picker(selection: $codeThemes.currentFontSize, label: Text("FontSize"), content: {
-                    ForEach(0 ..< codeThemes.availableFontSizes.count ) {
-                        Text("\(codeThemes.availableFontSizes[$0])").tag(codeThemes.availableFontSizes[$0])
+                Picker(selection: $fontSizeIndex, label: Text("FontSize"), content: {
+                    ForEach(0 ..< CodeThemeData.availableFontSizes.count) {
+                        Text("\(CodeThemeData.availableFontSizes[$0])").tag($0)
+                    }
+                    .onChange(of: fontSizeIndex) { _ in
+                        codeThemes.currentFontSize = CodeThemeData.availableFontSizes[fontSizeIndex]
                     }
                 })
                 .pickerStyle(WheelPickerStyle())

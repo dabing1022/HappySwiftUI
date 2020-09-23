@@ -32,8 +32,8 @@ final class CodeThemeData: ObservableObject {
     public static let maxCodeFontSize: Int = 26
     
     var availableThemes = Highlightr().availableThemes()
-    var availableFontNames = [defaultFontName]
-    var availableFontSizes = [Int](minCodeFontSize...maxCodeFontSize)
+    var availableFontNames: [String] = []
+    public static var availableFontSizes = [Int](minCodeFontSize...maxCodeFontSize)
     
     var currentTheme = CodeThemeData.userTheme() {
         didSet {
@@ -89,13 +89,46 @@ final class CodeThemeData: ObservableObject {
             UserDefaults.standard.setValue(currentFontName, forKey: CodeThemeData.codeFontNameKey)
             shouldSync = true
         }
-
+        
         if (UserDefaults.standard.integer(forKey: CodeThemeData.codeFontSizeKey) == 0) {
             UserDefaults.standard.setValue(currentFontSize, forKey: CodeThemeData.codeFontSizeKey)
             shouldSync = true
         }
         if shouldSync {
             UserDefaults.standard.synchronize()
+        }
+        
+        DispatchQueue.global().async {
+            let familyNames = UIFont.familyNames
+                .sorted(by: { (familyName1, familyName2) -> Bool in
+                    return familyName1 < familyName2
+                })
+                .filter({ (familyName) -> Bool in
+                    return !FontList.black.contains(familyName)
+                        && UIFont.fontNames(forFamilyName: familyName).count > 0
+                })
+            
+            let normalFamilyNames = familyNames
+                .map { (familyName) in
+                    return UIFont.fontNames(forFamilyName: familyName)
+                }
+            let classicFamilyNames = familyNames
+                .filter { (familyName) -> Bool in
+                    return FontList.classic.contains(familyName)
+                }
+                .map {(familyName) in 
+                    return UIFont.fontNames(forFamilyName: familyName)
+                }
+            for fontNames in normalFamilyNames {
+                for fontName in fontNames {
+                    self.availableFontNames.append(fontName)
+                }
+            }
+            for fontNames in classicFamilyNames {
+                for fontName in fontNames {
+                    self.availableFontNames.append(fontName)
+                }
+            }
         }
     }
 }
