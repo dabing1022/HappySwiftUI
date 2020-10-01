@@ -18,15 +18,15 @@ struct ContentView: View {
                     Image(systemName: "book")
                     Text(Localizable.tutorials, bundle: languages.bundle)
                 }
-            Text("The content of the first view")
+            ExploreHomePage()
                 .tabItem {
                     Image(systemName: "safari")
                     Text(Localizable.explore, bundle: languages.bundle)
                 }
             Text("The content of the first view")
                 .tabItem {
-                    Image(systemName: "timer")
-                    Text(Localizable.history, bundle: languages.bundle)
+                    Image(systemName: "star")
+                    Text(Localizable.favor, bundle: languages.bundle)
                 }
             SettingsHomePage()
                 .environmentObject(self.languages)

@@ -14,6 +14,7 @@ struct Localizable {
     static let awesome: LocalizedStringKey = "Awesome"
     static let explore: LocalizedStringKey = "Explore"
     static let history: LocalizedStringKey = "History"
+    static let favor: LocalizedStringKey = "Favor"
     static let setting: LocalizedStringKey = "Settings"
     static let languages: LocalizedStringKey = "Languages"
     static let appLanguage: LocalizedStringKey = "AppLanguage"

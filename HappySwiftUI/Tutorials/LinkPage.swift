@@ -19,7 +19,7 @@ struct LinkPage: View {
                 .padding()
 
             Button("Button: Jump to app author github homepage.") {
-                self.showSafari = true
+                self.showSafari.toggle()
             }
             .padding()
             .fullScreenCover(isPresented: $showSafari) {

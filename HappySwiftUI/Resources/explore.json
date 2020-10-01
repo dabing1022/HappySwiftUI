@@ -1,0 +1,51 @@
+{
+    "groups": [
+        {
+          "groupId": 1,
+          "source": "AppleDocuments",
+          "items": [
+              {
+                  "title": "SwiftUI",
+                  "url": "https://developer.apple.com/xcode/swiftui/"
+              },
+              {
+                  "title": "Learn to Make Apps with SwiftUI",
+                  "url": "https://developer.apple.com/tutorials/swiftui/tutorials"
+              },
+              {
+                  "title": "Views and Controls",
+                  "url": "https://developer.apple.com/documentation/swiftui/views_and_controls"
+              },
+              {
+                  "title": "View Layout and Presentation",
+                  "url": "https://developer.apple.com/documentation/swiftui/view_layout_and_presentation"
+              },
+              {
+                  "title": "Drawing and Animation",
+                  "url": "https://developer.apple.com/documentation/swiftui/drawing_and_animation"
+              },
+              {
+                  "title": "Framework Integration",
+                  "url": "https://developer.apple.com/documentation/swiftui/framework_integration"
+              },
+              {
+                  "title": "State and Data Flow",
+                  "url": "https://developer.apple.com/documentation/swiftui/state_and_data_flow"
+              },
+              {
+                  "title": "Gestures",
+                  "url": "https://developer.apple.com/documentation/swiftui/gestures"
+              },
+              {
+                  "title": "Previews",
+                  "url": "https://developer.apple.com/documentation/swiftui/previews"
+              }
+          ]
+        },
+        {
+          "groupId": 2,
+          "source": "Github",
+          "items": []
+        }
+    ]
+}

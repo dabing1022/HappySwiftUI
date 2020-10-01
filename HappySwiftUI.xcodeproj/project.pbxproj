@@ -45,6 +45,10 @@
 		BDCD0D5A251A4B8B003262F8 /* FiraCode-Retina.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDCD0D47251A4B8B003262F8 /* FiraCode-Retina.ttf */; };
 		BDCD0D5B251A4B8B003262F8 /* FiraCode-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDCD0D48251A4B8B003262F8 /* FiraCode-Bold.ttf */; };
 		BDCD0D5C251A4B8B003262F8 /* FiraCode-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDCD0D49251A4B8B003262F8 /* FiraCode-Light.ttf */; };
+		BDD231CE25260948001336ED /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = BDD231CD25260948001336ED /* explore.json */; };
+		BDD231D325260D13001336ED /* ExploreHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231D225260D13001336ED /* ExploreHomePage.swift */; };
+		BDD231D825260F45001336ED /* ExploreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231D725260F45001336ED /* ExploreModels.swift */; };
+		BDD231E0252629C9001336ED /* ExploreGroupDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */; };
 		BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */; };
 		BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E22518EC4200C09837 /* CodeTheme.swift */; };
 		BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */; };
@@ -105,6 +109,10 @@
 		BDCD0D47251A4B8B003262F8 /* FiraCode-Retina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Retina.ttf"; sourceTree = "<group>"; };
 		BDCD0D48251A4B8B003262F8 /* FiraCode-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Bold.ttf"; sourceTree = "<group>"; };
 		BDCD0D49251A4B8B003262F8 /* FiraCode-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Light.ttf"; sourceTree = "<group>"; };
+		BDD231CD25260948001336ED /* explore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explore.json; sourceTree = "<group>"; };
+		BDD231D225260D13001336ED /* ExploreHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHomePage.swift; sourceTree = "<group>"; };
+		BDD231D725260F45001336ED /* ExploreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreModels.swift; sourceTree = "<group>"; };
+		BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGroupDetailPage.swift; sourceTree = "<group>"; };
 		BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeThemePickPage.swift; sourceTree = "<group>"; };
 		BDD253E22518EC4200C09837 /* CodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTheme.swift; sourceTree = "<group>"; };
 		BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorHelper.swift; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 				BD6B604A250519A00096554E /* Localizable */,
 				BD6B603A2503D5250096554E /* Safari */,
 				BD6B60372503D1190096554E /* Settings */,
+				BDD231D125260CEE001336ED /* Explore */,
 				BD1AA6B52503CC5500BE5BC5 /* Tutorials */,
 				BD1AA6A12503C65000BE5BC5 /* AppDelegate.swift */,
 				BD1AA6A32503C65000BE5BC5 /* SceneDelegate.swift */,
@@ -317,12 +326,23 @@
 			path = ttf;
 			sourceTree = "<group>";
 		};
+		BDD231D125260CEE001336ED /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				BDD231D225260D13001336ED /* ExploreHomePage.swift */,
+				BDD231D725260F45001336ED /* ExploreModels.swift */,
+				BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		BDD7F1E52515065F00C28B05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				BDCD0D32251A4B8B003262F8 /* fonts */,
 				BDD7F1E62515069C00C28B05 /* tutorials_github.json */,
 				BDD7F1EA2515095700C28B05 /* view-layout-and-presentation.json */,
+				BDD231CD25260948001336ED /* explore.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -395,6 +415,7 @@
 				BD1AA6AE2503C65500BE5BC5 /* LaunchScreen.storyboard in Resources */,
 				BDCD0D4F251A4B8B003262F8 /* SourceCodePro-It.ttf in Resources */,
 				BD6B6040250513910096554E /* InfoPlist.strings in Resources */,
+				BDD231CE25260948001336ED /* explore.json in Resources */,
 				BDCD0D4D251A4B8B003262F8 /* SourceCodePro-SemiboldIt.ttf in Resources */,
 				BDCD0D4C251A4B8B003262F8 /* SourceCodePro-Medium.ttf in Resources */,
 				BDCD0D57251A4B8B003262F8 /* SourceCodePro-Bold.ttf in Resources */,
@@ -474,11 +495,14 @@
 				BD1AA6A22503C65000BE5BC5 /* AppDelegate.swift in Sources */,
 				BD6B604C250519DC0096554E /* Localizable.swift in Sources */,
 				BDC78BE4250E79B100F9C816 /* MapView.swift in Sources */,
+				BDD231D325260D13001336ED /* ExploreHomePage.swift in Sources */,
 				BDD7F1F52517A3C700C28B05 /* LazyHGridPage.swift in Sources */,
 				BDC78BE1250E77B800F9C816 /* CodeEditorVIew.swift in Sources */,
+				BDD231E0252629C9001336ED /* ExploreGroupDetailPage.swift in Sources */,
 				BD1AA6A42503C65000BE5BC5 /* SceneDelegate.swift in Sources */,
 				BDD7F1EE2517954200C28B05 /* LazyVStackPage.swift in Sources */,
 				BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */,
+				BDD231D825260F45001336ED /* ExploreModels.swift in Sources */,
 				BD1AA6A62503C65000BE5BC5 /* ContentView.swift in Sources */,
 				BD6B60392503D1380096554E /* SettingsHomePage.swift in Sources */,
 				BD06FA43250E5B5800EAC772 /* GlobalData.swift in Sources */,
