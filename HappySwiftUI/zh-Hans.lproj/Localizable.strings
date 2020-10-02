@@ -11,6 +11,7 @@
 "Awesome" = "真棒";
 "History" = "历史";
 "Favor" = "收藏";
+"Featured" = "精选";
 "Settings" = "设置";
 "Languages" = "语言";
 "AppLanguage" = "应用语言";
@@ -25,3 +26,6 @@
 "Theme" = "主题";
 "Font" = "字体";
 "FontSize" = "字体大小";
+"Version" = "版本";
+"Let's play SwiftUI happily!" = "让我们一起快乐的玩耍SwiftUI吧！";
+"Issues" = "讨论";

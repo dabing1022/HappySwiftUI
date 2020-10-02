@@ -23,10 +23,10 @@ struct ContentView: View {
                     Image(systemName: "safari")
                     Text(Localizable.explore, bundle: languages.bundle)
                 }
-            Text("The content of the first view")
+            FeaturedHomePage()
                 .tabItem {
-                    Image(systemName: "star")
-                    Text(Localizable.favor, bundle: languages.bundle)
+                    Image(systemName: "bookmark.circle")
+                    Text(Localizable.featured, bundle: languages.bundle)
                 }
             SettingsHomePage()
                 .environmentObject(self.languages)

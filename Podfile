@@ -5,6 +5,7 @@ use_frameworks!
 target 'HappySwiftUI' do
     pod 'Highlightr', :git => 'git@github.com:brunophilipe/Highlightr.git'
     pod 'RealmSwift'
+    pod 'Kingfisher'
 end
 
 

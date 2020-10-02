@@ -20,20 +20,19 @@ struct SettingsHomePage: View {
 }
 
 struct AppInfoView: View {
+    @EnvironmentObject var languages: LanguagesData
+    
     var body: some View {
         HStack {
             Image("AppLogo")
-                .clipShape(Circle())
+                .frame(width: 60, height: 60, alignment: Alignment.center)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding()
-            VStack {
-                Text("Version 1.0.0")
+            VStack(alignment: .leading, spacing: 6) {
+                Text(Localizable.slogan, bundle: languages.bundle)
+                    .textCase(.none)
+                Text(Localizable.version, bundle: languages.bundle) + Text(" \(Version.appVersion)")
             }
-            Button("升级历史") {
-                
-            }
-            .padding()
-            .background(Color.red)
-            .cornerRadius(4)
             Spacer()
         }
     }
@@ -42,6 +41,8 @@ struct AppInfoView: View {
 struct SettingList: View {
     @EnvironmentObject var languages: LanguagesData
     @EnvironmentObject var codeThemes: CodeThemeData
+    
+    @State private var showSafari = false
     
     var body: some View {
         List {
@@ -76,6 +77,17 @@ struct SettingList: View {
                         Spacer()
                         Text("\(codeThemes.currentFontSize)")
                     }
+                }
+            }
+            
+            Section {
+                Text(Localizable.issues, bundle: languages.bundle)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.showSafari.toggle()
+                    }
+                .sheet(isPresented: $showSafari) {
+                    SafariView(url: URL(string: GlobalData.github_issues_url)!)
                 }
             }
         }

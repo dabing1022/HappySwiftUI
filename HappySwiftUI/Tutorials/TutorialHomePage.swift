@@ -41,6 +41,8 @@ struct TutorialHomePage: View {
     }
 }
 
+
+
 struct TutorialHomePageList: View {
     var body: some View {
         List {
@@ -56,13 +58,27 @@ struct TutorialHomePageList: View {
     }
 }
 
+struct SectionHeader: View {
+    var title: String
+    var body: some View {
+        Text(verbatim: title)
+            .font(.system(.headline))
+            .textCase(.none)
+    }
+}
+
+struct TutorialHomePageListSectionLabelStyle : LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Label(configuration)
+//            .font(.system(.title))
+            .foregroundColor(.red)
+            .textCase(.none)
+    }
+}
+
 struct TutorialHomePageTextSection: View {
     var body: some View {
-        Section(header:
-                    HStack {
-                        Text(verbatim: "Text").font(.system(.headline))
-                    }
-        ) {
+        Section(header: SectionHeader(title: "Text")) {
             NavigationLink(destination: TextPage()) {
                 VStack(alignment: .leading) {
                     Text(verbatim: "Text")
@@ -109,10 +125,7 @@ struct TutorialHomePageTextSection: View {
 
 struct TutorialHomePageImagesSection: View {
     var body: some View {
-        Section(header:
-                    HStack {
-                        Text(verbatim: "Images").font(.system(.headline))
-                    }) {
+        Section(header: SectionHeader(title: "Images")) {
             Text("Image")
         }
     }
@@ -120,7 +133,7 @@ struct TutorialHomePageImagesSection: View {
 
 struct TutorialHomePageButtonsSection: View {
     var body: some View {
-        Section(header: Text(verbatim: "Buttons").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Buttons")) {
             Text("Button")
             Text("NavigationLink")
             Text("MenuButton")
@@ -134,7 +147,7 @@ struct TutorialHomePageButtonsSection: View {
 
 struct TutorialHomePageValueSelectorsSection: View {
     var body: some View {
-        Section(header: Text(verbatim: "Value Selectors").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Value Selectors")) {
             Text("Toggle")
             NavigationLink(destination: PickerPage()) {
                 Text("Picker")
@@ -150,7 +163,7 @@ struct TutorialHomePageValueSelectorsSection: View {
 struct TutorialHomePageValueIndicatorsSection: View {
     @State private var showingAlert = false
     var body: some View {
-        Section(header: Text(verbatim: "Value Indicators").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Value Indicators")) {
             Text(verbatim: "ProgressView")
             HStack {
                 Text(verbatim: "Gauge")
@@ -179,7 +192,7 @@ struct TutorialHomePageValueIndicatorsSection: View {
 
 struct TutorialHomePageFontsLocalizationSection: View {
     var body: some View {
-        Section(header: Text(verbatim: "Fonts and Localization").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Fonts and Localization")) {
             Text(verbatim: "Font")
             Text(verbatim: "ScaledMetric")
             Text(verbatim: "LocalizedStringKey")
@@ -189,7 +202,7 @@ struct TutorialHomePageFontsLocalizationSection: View {
 
 struct TutorialHomePageStacksSection: View {
     var body: some View {
-        Section(header: Text(verbatim: "Stacks").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Stacks")) {
             NavigationLink(destination: TextPage()) {
                 VStack(alignment: .leading) {
                     Text("HStack")
@@ -246,7 +259,7 @@ struct TutorialHomePageStacksSection: View {
 
 struct TutorialHomePageGridsSection: View {
     var body: some View {
-        Section(header: Text(verbatim: "Grids").font(.system(.headline))) {
+        Section(header: SectionHeader(title: "Grids")) {
             NavigationLink(destination: LazyHGridPage()) {
                 VStack(alignment: .leading) {
                     Text("LazyHGrid")

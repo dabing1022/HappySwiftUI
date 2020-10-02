@@ -24,6 +24,7 @@ struct ExploreHomePage: View {
                     }
                 }
             }
+            .padding(.top, 4)
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text(Localizable.explore, bundle: languages.bundle), displayMode: .large)
         }

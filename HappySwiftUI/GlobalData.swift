@@ -9,5 +9,5 @@
 import Foundation
 
 struct GlobalData {
-    
+    static let github_issues_url = "https://github.com/dabing1022/HappySwiftUI_Issues/issues"
 }

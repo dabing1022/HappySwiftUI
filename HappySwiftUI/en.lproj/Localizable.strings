@@ -11,6 +11,7 @@
 "Awesome" = "Awesome";
 "History" = "History";
 "Favor" = "Favor";
+"Featured" = "Featured";
 "Settings" = "Settings";
 "Languages" = "Languages";
 "AppLanguage" = "AppLanguage";
@@ -25,3 +26,7 @@
 "Theme" = "Theme";
 "Font" = "Font";
 "FontSize" = "FontSize";
+"VersionHistory" = "VersionHistory";
+"Version" = "Version";
+"Let's play SwiftUI happily!" = "Let's play SwiftUI happily!";
+"Issues" = "Issues";

@@ -30,20 +30,15 @@ struct ExploreGroupDetailPage: View {
                         self.showSafari.toggle()
                     }
                     .onLongPressGesture {
+                        TapicEngine.shared.impact.feedback(style: .light)
                         self.showingActionSheet.toggle()
                     }
-                    .fullScreenCover(isPresented: $showSafari) {
+                    .sheet(isPresented: $showSafari) {
                         SafariView(url: URL(string: item.url)!)
                     }
                     .actionSheet(isPresented: $showingActionSheet) {
-                        ActionSheet(title: Text("Actions"), message: Text("Select a action"), buttons: [
+                        ActionSheet(title: Text("Star it"), buttons: [
                             .default(Text("Favor")) {
-                                print("111")
-                                
-                            },
-                            .default(Text("Blue")) {
-                                print("222")
-                                
                             },
                             .cancel()
                         ])

@@ -22,7 +22,7 @@ struct LinkPage: View {
                 self.showSafari.toggle()
             }
             .padding()
-            .fullScreenCover(isPresented: $showSafari) {
+            .sheet(isPresented: $showSafari) {
                 SafariView(url: destinationUrl)
             }
         }

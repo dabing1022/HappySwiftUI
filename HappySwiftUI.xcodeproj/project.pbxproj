@@ -49,6 +49,10 @@
 		BDD231D325260D13001336ED /* ExploreHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231D225260D13001336ED /* ExploreHomePage.swift */; };
 		BDD231D825260F45001336ED /* ExploreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231D725260F45001336ED /* ExploreModels.swift */; };
 		BDD231E0252629C9001336ED /* ExploreGroupDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */; };
+		BDD2322325275830001336ED /* TapicEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322225275830001336ED /* TapicEngine.swift */; };
+		BDD2322725276AA8001336ED /* VersionHistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322625276AA8001336ED /* VersionHistoryPage.swift */; };
+		BDD2322A25276E80001336ED /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322925276E80001336ED /* Version.swift */; };
+		BDD2322F252770D6001336ED /* FeaturedHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322E252770D6001336ED /* FeaturedHomePage.swift */; };
 		BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */; };
 		BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E22518EC4200C09837 /* CodeTheme.swift */; };
 		BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */; };
@@ -113,6 +117,10 @@
 		BDD231D225260D13001336ED /* ExploreHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHomePage.swift; sourceTree = "<group>"; };
 		BDD231D725260F45001336ED /* ExploreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreModels.swift; sourceTree = "<group>"; };
 		BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreGroupDetailPage.swift; sourceTree = "<group>"; };
+		BDD2322225275830001336ED /* TapicEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapicEngine.swift; sourceTree = "<group>"; };
+		BDD2322625276AA8001336ED /* VersionHistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistoryPage.swift; sourceTree = "<group>"; };
+		BDD2322925276E80001336ED /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		BDD2322E252770D6001336ED /* FeaturedHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedHomePage.swift; sourceTree = "<group>"; };
 		BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeThemePickPage.swift; sourceTree = "<group>"; };
 		BDD253E22518EC4200C09837 /* CodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTheme.swift; sourceTree = "<group>"; };
 		BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorHelper.swift; sourceTree = "<group>"; };
@@ -177,12 +185,14 @@
 		BD1AA6A02503C65000BE5BC5 /* HappySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BDD23221252757D0001336ED /* HappyKit */,
 				BDD7F1E52515065F00C28B05 /* Resources */,
 				BDC78BE2250E79B100F9C816 /* SupportingViews */,
 				BDC78BDD250E768D00F9C816 /* CodeEditor */,
 				BD6B604A250519A00096554E /* Localizable */,
 				BD6B603A2503D5250096554E /* Safari */,
 				BD6B60372503D1190096554E /* Settings */,
+				BDD2322D252770B2001336ED /* Featured */,
 				BDD231D125260CEE001336ED /* Explore */,
 				BD1AA6B52503CC5500BE5BC5 /* Tutorials */,
 				BD1AA6A12503C65000BE5BC5 /* AppDelegate.swift */,
@@ -229,6 +239,7 @@
 				BD6B60382503D1380096554E /* SettingsHomePage.swift */,
 				BD6B604D25052A240096554E /* LanguagesView.swift */,
 				BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */,
+				BDD2322625276AA8001336ED /* VersionHistoryPage.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -334,6 +345,23 @@
 				BDD231DF252629C9001336ED /* ExploreGroupDetailPage.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		BDD23221252757D0001336ED /* HappyKit */ = {
+			isa = PBXGroup;
+			children = (
+				BDD2322225275830001336ED /* TapicEngine.swift */,
+				BDD2322925276E80001336ED /* Version.swift */,
+			);
+			path = HappyKit;
+			sourceTree = "<group>";
+		};
+		BDD2322D252770B2001336ED /* Featured */ = {
+			isa = PBXGroup;
+			children = (
+				BDD2322E252770D6001336ED /* FeaturedHomePage.swift */,
+			);
+			path = Featured;
 			sourceTree = "<group>";
 		};
 		BDD7F1E52515065F00C28B05 /* Resources */ = {
@@ -494,6 +522,8 @@
 				BDC78BDC250E642800F9C816 /* TextPage.swift in Sources */,
 				BD1AA6A22503C65000BE5BC5 /* AppDelegate.swift in Sources */,
 				BD6B604C250519DC0096554E /* Localizable.swift in Sources */,
+				BDD2322325275830001336ED /* TapicEngine.swift in Sources */,
+				BDD2322725276AA8001336ED /* VersionHistoryPage.swift in Sources */,
 				BDC78BE4250E79B100F9C816 /* MapView.swift in Sources */,
 				BDD231D325260D13001336ED /* ExploreHomePage.swift in Sources */,
 				BDD7F1F52517A3C700C28B05 /* LazyHGridPage.swift in Sources */,
@@ -501,6 +531,7 @@
 				BDD231E0252629C9001336ED /* ExploreGroupDetailPage.swift in Sources */,
 				BD1AA6A42503C65000BE5BC5 /* SceneDelegate.swift in Sources */,
 				BDD7F1EE2517954200C28B05 /* LazyVStackPage.swift in Sources */,
+				BDD2322A25276E80001336ED /* Version.swift in Sources */,
 				BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */,
 				BDD231D825260F45001336ED /* ExploreModels.swift in Sources */,
 				BD1AA6A62503C65000BE5BC5 /* ContentView.swift in Sources */,
@@ -513,6 +544,7 @@
 				BDD7F1E22514F9AC00C28B05 /* PickerPage.swift in Sources */,
 				BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */,
 				BD1AA6B72503CC8B00BE5BC5 /* TutorialHomePage.swift in Sources */,
+				BDD2322F252770D6001336ED /* FeaturedHomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +712,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happycoding.HappySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -702,6 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happycoding.HappySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -15,7 +15,9 @@ struct Localizable {
     static let explore: LocalizedStringKey = "Explore"
     static let history: LocalizedStringKey = "History"
     static let favor: LocalizedStringKey = "Favor"
+    static let featured: LocalizedStringKey = "Featured"
     static let setting: LocalizedStringKey = "Settings"
+    static let versionHistory: LocalizedStringKey = "VersionHistory"
     static let languages: LocalizedStringKey = "Languages"
     static let appLanguage: LocalizedStringKey = "AppLanguage"
     static let automatic: LocalizedStringKey = "Automatic"
@@ -29,6 +31,9 @@ struct Localizable {
     static let theme: LocalizedStringKey = "Theme"
     static let font: LocalizedStringKey = "Font"
     static let fontSize: LocalizedStringKey = "FontSize"
+    static let version: LocalizedStringKey = "Version"
+    static let slogan: LocalizedStringKey = "Let's play SwiftUI happily!"
+    static let issues: LocalizedStringKey = "Issues"
 
     enum SupportLanguages: String, CaseIterable, Identifiable {
         var id: String {
