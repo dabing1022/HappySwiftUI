@@ -9,13 +9,23 @@
 import SwiftUI
 
 struct TextEditorPage: View {
-    @State private var fullText: String = "This is some editable text..."
+    @State private var text1: String = "This is text editor1"
+    @State private var text2: String = "This is text editor2"
     
     var body: some View {
-        TextEditor(text: $fullText)
-            .foregroundColor(Color.gray)
-            .font(.custom("HelveticaNeue", size: 13))
-            .lineSpacing(5)
+        VStack {
+            TextEditor(text: $text1)
+                .foregroundColor(Color.yellow)
+                .font(.custom("HelveticaNeue", size: 13))
+                .lineSpacing(5)
+                .border(Color.yellow, width: 2.0)
+            TextEditor(text: $text2)
+                .foregroundColor(Color.white)
+                .font(.system(.footnote))
+                .lineLimit(5)
+                .border(Color.white, width: 2.0)
+        }
+        .navigationBarTitle(Text(verbatim: "TextEditor"), displayMode: .inline)
     }
 }
 

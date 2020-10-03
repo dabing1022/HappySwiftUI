@@ -1,0 +1,25 @@
+{
+    "groups": [
+        {
+          "featuredId": 1,
+          "topic": "What's new in SwiftUI for iOS 14?",
+          "source": "Apple",
+          "items": [
+              {
+                  "title": "appStoreOverlay",
+              }
+          ]
+        },
+        {
+          "featuredId": 2,
+          "topic": "Hacking with Swift will help you learn app development with UIKit and SwiftUI.",
+          "source": "hackingwithswift",
+          "items": [
+              {
+                  "title": "Designing a single card view",
+                  "url": "https://www.hackingwithswift.com/books/ios-swiftui/designing-a-single-card-view"
+              }
+          ]
+        }
+    ]
+}

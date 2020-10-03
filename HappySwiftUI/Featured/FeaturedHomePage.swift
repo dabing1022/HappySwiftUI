@@ -11,11 +11,22 @@ import SwiftUI
 struct FeaturedHomePage: View {
     @EnvironmentObject var languages: LanguagesData
     
+    let data = [Card.example1, Card.example2]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    ForEach(data) { card in
+                        NavigationLink(destination: TextPage()) {
+                            FeaturedTopicCard(card: card)
+                                .frame(width: UIScreen.main.bounds.width * 0.8, height: 250, alignment: .center)
+                        }.buttonStyle(PlainButtonStyle())
+                    }
+                }
+            }
             .navigationBarTitle(Text(Localizable.featured, bundle: languages.bundle), displayMode: .large)
-
-        
+        }
     }
 }
 

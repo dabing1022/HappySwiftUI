@@ -53,6 +53,10 @@
 		BDD2322725276AA8001336ED /* VersionHistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322625276AA8001336ED /* VersionHistoryPage.swift */; };
 		BDD2322A25276E80001336ED /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322925276E80001336ED /* Version.swift */; };
 		BDD2322F252770D6001336ED /* FeaturedHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2322E252770D6001336ED /* FeaturedHomePage.swift */; };
+		BDD232332528AAB1001336ED /* ProgressViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD232322528AAB1001336ED /* ProgressViewPage.swift */; };
+		BDD232362528C62A001336ED /* ColorPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD232352528C62A001336ED /* ColorPickerPage.swift */; };
+		BDD232392528D01F001336ED /* featured.json in Resources */ = {isa = PBXBuildFile; fileRef = BDD232382528D01F001336ED /* featured.json */; };
+		BDD2323C2528D103001336ED /* FeaturedTopicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2323B2528D103001336ED /* FeaturedTopicCard.swift */; };
 		BDD253E02518E9E500C09837 /* CodeThemePickPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */; };
 		BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E22518EC4200C09837 /* CodeTheme.swift */; };
 		BDD253E62518EFE100C09837 /* CodeEditorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */; };
@@ -121,6 +125,10 @@
 		BDD2322625276AA8001336ED /* VersionHistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistoryPage.swift; sourceTree = "<group>"; };
 		BDD2322925276E80001336ED /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		BDD2322E252770D6001336ED /* FeaturedHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedHomePage.swift; sourceTree = "<group>"; };
+		BDD232322528AAB1001336ED /* ProgressViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewPage.swift; sourceTree = "<group>"; };
+		BDD232352528C62A001336ED /* ColorPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerPage.swift; sourceTree = "<group>"; };
+		BDD232382528D01F001336ED /* featured.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = featured.json; sourceTree = "<group>"; };
+		BDD2323B2528D103001336ED /* FeaturedTopicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTopicCard.swift; sourceTree = "<group>"; };
 		BDD253DF2518E9E500C09837 /* CodeThemePickPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeThemePickPage.swift; sourceTree = "<group>"; };
 		BDD253E22518EC4200C09837 /* CodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTheme.swift; sourceTree = "<group>"; };
 		BDD253E52518EFE100C09837 /* CodeEditorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorHelper.swift; sourceTree = "<group>"; };
@@ -229,6 +237,8 @@
 				BDD7F1F42517A3C600C28B05 /* LazyHGridPage.swift */,
 				BDD253E82519D71000C09837 /* LinkPage.swift */,
 				BDBAC0912519FC5200624028 /* LabelPage.swift */,
+				BDD232322528AAB1001336ED /* ProgressViewPage.swift */,
+				BDD232352528C62A001336ED /* ColorPickerPage.swift */,
 			);
 			path = Tutorials;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD2322E252770D6001336ED /* FeaturedHomePage.swift */,
+				BDD2323B2528D103001336ED /* FeaturedTopicCard.swift */,
 			);
 			path = Featured;
 			sourceTree = "<group>";
@@ -371,6 +382,7 @@
 				BDD7F1E62515069C00C28B05 /* tutorials_github.json */,
 				BDD7F1EA2515095700C28B05 /* view-layout-and-presentation.json */,
 				BDD231CD25260948001336ED /* explore.json */,
+				BDD232382528D01F001336ED /* featured.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -437,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6B6046250513F90096554E /* Localizable.strings in Resources */,
+				BDD232392528D01F001336ED /* featured.json in Resources */,
 				BDCD0D54251A4B8B003262F8 /* SourceCodePro-Regular.ttf in Resources */,
 				BDCD0D53251A4B8B003262F8 /* SourceCodePro-BlackIt.ttf in Resources */,
 				BDCD0D4E251A4B8B003262F8 /* SourceCodePro-Light.ttf in Resources */,
@@ -516,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6B604E25052A240096554E /* LanguagesView.swift in Sources */,
+				BDD2323C2528D103001336ED /* FeaturedTopicCard.swift in Sources */,
 				BDD7F1DE2514F6B000C28B05 /* TextEditorPage.swift in Sources */,
 				BDBAC0922519FC5200624028 /* LabelPage.swift in Sources */,
 				BDD7F1F125179B7C00C28B05 /* LazyHStackPage.swift in Sources */,
@@ -525,6 +539,7 @@
 				BDD2322325275830001336ED /* TapicEngine.swift in Sources */,
 				BDD2322725276AA8001336ED /* VersionHistoryPage.swift in Sources */,
 				BDC78BE4250E79B100F9C816 /* MapView.swift in Sources */,
+				BDD232362528C62A001336ED /* ColorPickerPage.swift in Sources */,
 				BDD231D325260D13001336ED /* ExploreHomePage.swift in Sources */,
 				BDD7F1F52517A3C700C28B05 /* LazyHGridPage.swift in Sources */,
 				BDC78BE1250E77B800F9C816 /* CodeEditorVIew.swift in Sources */,
@@ -537,6 +552,7 @@
 				BD1AA6A62503C65000BE5BC5 /* ContentView.swift in Sources */,
 				BD6B60392503D1380096554E /* SettingsHomePage.swift in Sources */,
 				BD06FA43250E5B5800EAC772 /* GlobalData.swift in Sources */,
+				BDD232332528AAB1001336ED /* ProgressViewPage.swift in Sources */,
 				BD6B603C2503D55D0096554E /* SafariView.swift in Sources */,
 				BDD253E92519D71000C09837 /* LinkPage.swift in Sources */,
 				BDD253E32518EC4200C09837 /* CodeTheme.swift in Sources */,

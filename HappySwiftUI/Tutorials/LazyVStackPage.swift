@@ -8,12 +8,46 @@
 
 import SwiftUI
 
-struct LazyVStackPage: View {
+struct SampleRow: View {
+    let id: Int
+    @Binding var console: String
+    
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 10) {
-                ForEach(1...100, id: \.self) {
-                    Text("Row \($0)")
+        Text("Row \(id)")
+            .onAppear {
+                let log = "Load row \(id)"
+                print(log)
+                if (self.console.count > 0) {
+                    self.console.append("\n")
+                }
+                self.console.append(log)
+            }
+    }
+    
+//    init(id: Int, console: Binding<String>) {
+//        self.id = id
+//        self._console = console
+//    }
+}
+
+struct LazyVStackPage: View {
+    @State private var console: String = ""
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    ForEach(1...100, id: \.self) {
+                        SampleRow(id: $0, console: self.$console)
+                    }
+                }
+            }
+            
+            ScrollView {
+                ScrollViewReader { scrollView in
+                    Text(self.console)
+                        .border(Color.white, width: 1.5)
+                        .lineLimit(nil)
                 }
             }
         }

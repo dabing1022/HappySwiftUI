@@ -54,6 +54,7 @@ struct TutorialHomePageList: View {
             TutorialHomePageFontsLocalizationSection()
             TutorialHomePageStacksSection()
             TutorialHomePageGridsSection()
+            TutorialHomePageListsAndScrollViewsSection()
         }
     }
 }
@@ -155,7 +156,16 @@ struct TutorialHomePageValueSelectorsSection: View {
             Text("DataPicker")
             Text("Slider")
             Text("Stepper")
-            Text("ColorPicker")
+            NavigationLink(destination: ColorPickerPage()) {
+                VStack(alignment: .leading) {
+                    Text(verbatim: "ColorPicker")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A control used to select a color from the system color picker UI.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
         }
     }
 }
@@ -164,7 +174,16 @@ struct TutorialHomePageValueIndicatorsSection: View {
     @State private var showingAlert = false
     var body: some View {
         Section(header: SectionHeader(title: "Value Indicators")) {
-            Text(verbatim: "ProgressView")
+            NavigationLink(destination: ProgressViewPage()) {
+                VStack(alignment: .leading) {
+                    Text(verbatim: "ProgressView")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A view that shows the progress towards completion of a task.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
             HStack {
                 Text(verbatim: "Gauge")
                     .foregroundColor(Color.gray)
@@ -283,6 +302,65 @@ struct TutorialHomePageGridsSection: View {
         }
     }
 }
+
+struct TutorialHomePageListsAndScrollViewsSection: View {
+    var body: some View {
+        Section(header: SectionHeader(title: "Lists and Scroll Views")) {
+            NavigationLink(destination: LazyHGridPage()) {
+                VStack(alignment: .leading) {
+                    Text("List")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A container that presents rows of data arranged in a single column.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
+            NavigationLink(destination: TextPage()) {
+                VStack(alignment: .leading) {
+                    Text("ForEach")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A structure that computes views on demand from an underlying collection of of identified data.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
+            NavigationLink(destination: TextPage()) {
+                VStack(alignment: .leading) {
+                    Text("ScrollView")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A scrollable view.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
+            // https://www.youtube.com/watch?v=uitE6bmeFxM&t=104s&ab_channel=PaulHudson
+            NavigationLink(destination: TextPage()) {
+                VStack(alignment: .leading) {
+                    Text("ScrollViewReader")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A view whose child is defined as a function of a ScrollViewProxy targeting the scrollable views within the child.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
+            NavigationLink(destination: TextPage()) {
+                VStack(alignment: .leading) {
+                    Text("ScrollViewProxy")
+                        .font(.system(.body))
+                    Spacer()
+                    Text("A proxy value allowing the scrollable views within a view hierarchy to be scrolled programmatically.")
+                        .font(.system(.footnote))
+                }
+                .padding(.vertical, 4)
+            }
+        }
+    }
+}
+
 
 #if DEBUG
 struct TutorialHomePage_Previews: PreviewProvider {
