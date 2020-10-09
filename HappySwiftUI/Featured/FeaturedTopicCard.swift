@@ -8,24 +8,8 @@
 
 import SwiftUI
 
-struct Card: Identifiable {
-    var id: String {
-        prompt + answer
-    }
-    let prompt: String
-    let answer: String
-    
-    static var example1: Card {
-        Card(prompt: "What's your name?", answer: "ChildhoodAndy")
-    }
-    
-    static var example2: Card {
-        Card(prompt: "What's app's name?", answer: "HappySwiftUI")
-    }
-}
-
 struct FeaturedTopicCard: View {
-    let card: Card
+    let card: Featured.FeaturedGroup
     
     var body: some View {
         ZStack {
@@ -34,22 +18,16 @@ struct FeaturedTopicCard: View {
                 .shadow(radius: 10)
             
             VStack {
-                Text(card.prompt)
-                    .font(.largeTitle)
+                Text(card.topic)
+                    .font(.title)
                     .foregroundColor(.black)
                 
-                Text(card.answer)
-                    .font(.title)
+                Text(card.source)
+                    .font(.subheadline)
                     .foregroundColor(.gray)
             }
             .padding(20)
             .multilineTextAlignment(.center)
         }
-    }
-}
-
-struct FeaturedTopicCard_Previews: PreviewProvider {
-    static var previews: some View {
-        FeaturedTopicCard(card: Card.example1)
     }
 }

@@ -14,7 +14,7 @@ struct SettingsHomePage: View {
     var body: some View {
         NavigationView {
             SettingList()
-            .navigationBarTitle(Text(Localizable.setting, bundle: languages.bundle), displayMode: .large)
+                .navigationBarTitle(Text(Localizable.setting, bundle: languages.bundle), displayMode: .large)
         }
     }
 }
@@ -81,11 +81,14 @@ struct SettingList: View {
             }
             
             Section {
-                Text(Localizable.issues, bundle: languages.bundle)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        self.showSafari.toggle()
-                    }
+                HStack {
+                    Text(Localizable.issues, bundle: languages.bundle)
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.showSafari.toggle()
+                }
                 .sheet(isPresented: $showSafari) {
                     SafariView(url: URL(string: GlobalData.github_issues_url)!)
                 }
@@ -97,13 +100,13 @@ struct SettingList: View {
 
 #if DEBUG
 
-    struct SettingsHomePage_Previews: PreviewProvider {
-        static var previews: some View {
-            Group {
-                SettingsHomePage()
-                SettingsHomePage().environment(\.locale, .init(identifier: Localizable.SupportLanguages.zh_Hans.rawValue))
-            }
+struct SettingsHomePage_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            SettingsHomePage()
+            SettingsHomePage().environment(\.locale, .init(identifier: Localizable.SupportLanguages.zh_Hans.rawValue))
         }
     }
+}
 
 #endif

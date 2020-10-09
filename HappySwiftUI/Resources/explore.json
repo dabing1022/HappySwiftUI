@@ -9,28 +9,28 @@
                   "url": "https://developer.apple.com/xcode/swiftui/"
               },
               {
-                  "title": "Learn to Make Apps with SwiftUI",
-                  "url": "https://developer.apple.com/tutorials/swiftui/tutorials"
+                  "title": "Introducing SwiftUI",
+                  "url": "https://developer.apple.com/tutorials/swiftui/"
               },
               {
                   "title": "Views and Controls",
-                  "url": "https://developer.apple.com/documentation/swiftui/views_and_controls"
+                  "url": "https://developer.apple.com/documentation/swiftui/views-and-controls"
               },
               {
                   "title": "View Layout and Presentation",
-                  "url": "https://developer.apple.com/documentation/swiftui/view_layout_and_presentation"
+                  "url": "https://developer.apple.com/documentation/swiftui/view-layout-and-presentation"
               },
               {
                   "title": "Drawing and Animation",
-                  "url": "https://developer.apple.com/documentation/swiftui/drawing_and_animation"
+                  "url": "https://developer.apple.com/documentation/swiftui/drawing-and-animation"
               },
               {
                   "title": "Framework Integration",
-                  "url": "https://developer.apple.com/documentation/swiftui/framework_integration"
+                  "url": "https://developer.apple.com/documentation/swiftui/framework-integration"
               },
               {
                   "title": "State and Data Flow",
-                  "url": "https://developer.apple.com/documentation/swiftui/state_and_data_flow"
+                  "url": "https://developer.apple.com/documentation/swiftui/state-and-data-flow"
               },
               {
                   "title": "Gestures",
@@ -43,9 +43,68 @@
           ]
         },
         {
-          "groupId": 2,
+            "groupId": 2,
+            "source": "WWDC videos",
+            "items": [
+                {
+                    "title": "Introducing SwiftUI: Building Your First App",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/204/"
+                },
+                {
+                    "title": "SwiftUI Essentials",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/216"
+                },
+                {
+                    "title": "Data Flow Through SwiftUI",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/226"
+                },
+                {
+                    "title": "Building Custom Views with SwiftUI",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/237"
+                },
+                {
+                    "title": "Integrating SwiftUI",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/231"
+                },
+                {
+                    "title": "Accessibility in SwiftUI",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/238"
+                },
+                {
+                    "title": "SwiftUI On All Devices",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/240"
+                },
+                {
+                    "title": "SwiftUI on watchOS",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/219"
+                },
+                {
+                    "title": "Mastering Xcode Previews",
+                    "url": "https://developer.apple.com/videos/play/wwdc2019/233"
+                },
+            ]
+        },
+        {
+          "groupId": 3,
           "source": "Github",
-          "items": []
-        }
+          "items": [
+              {
+                  "title": "Jinxiansen/SwiftUI",
+                  "url": "https://github.com/Jinxiansen/SwiftUI"
+              },
+              {
+                  "title": "ivanvorobei/SwiftUI",
+                  "url": "https://github.com/ivanvorobei/SwiftUI"
+              },
+              {
+                  "title": "Juanpe/About-SwiftUI",
+                  "url": "https://github.com/Juanpe/About-SwiftUI"
+              },
+              {
+                  "title": "WillieWangWei/SwiftUI-Tutorials",
+                  "url": "https://github.com/WillieWangWei/SwiftUI-Tutorials"
+              }
+          ]
+        },
     ]
 }

@@ -14,29 +14,22 @@ import SwiftUI
 
 struct TutorialHomePage: View {
     @EnvironmentObject var languages: LanguagesData
+    @State private var showSafari = false
     
     var body: some View {
         NavigationView {
-            if #available(iOS 14.0, *) {
-                TutorialHomePageList()
-                    .listStyle(InsetGroupedListStyle())
-                    .navigationBarTitle(Text(Localizable.tutorials, bundle: languages.bundle), displayMode: .large)
-                    .navigationBarItems(trailing: Button(action: {
-                        print("tap")
-                    }, label: {
-                        Text("right").foregroundColor(.orange)
-                    }))
-            } else {
-                TutorialHomePageList()
-                    .listStyle(GroupedListStyle())
-                    .environment(\.horizontalSizeClass, .regular)
-                    .navigationBarTitle(Text(Localizable.tutorials, bundle: languages.bundle), displayMode: .large)
-                    .navigationBarItems(trailing: Button(action: {
-                        print("tap")
-                    }, label: {
-                        Text("right").foregroundColor(.orange)
-                    }))
-            }
+            TutorialHomePageList()
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarTitle(Text(Localizable.tutorials, bundle: languages.bundle), displayMode: .large)
+                .navigationBarItems(trailing: Button(action: {
+                    self.showSafari.toggle()
+                }, label: {
+                    Image("icons8-github-500").resizable().frame(width: 34, height: 34, alignment: .center)
+                    
+                }))
+                .sheet(isPresented: $showSafari) {
+                    SafariView(url: URL(string: GlobalData.github_issues_url)!)
+                }
         }
     }
 }
@@ -71,7 +64,7 @@ struct SectionHeader: View {
 struct TutorialHomePageListSectionLabelStyle : LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         Label(configuration)
-//            .font(.system(.title))
+            //            .font(.system(.title))
             .foregroundColor(.red)
             .textCase(.none)
     }
@@ -189,16 +182,16 @@ struct TutorialHomePageValueIndicatorsSection: View {
                     .foregroundColor(Color.gray)
                 Spacer()
             }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    self.showingAlert = true
-                }
-                .alert(isPresented: $showingAlert) {
-                    // TODO: 国际化
-                    Alert(title: Text("Tip"), message: Text("GauGe Availability: watchOS"), dismissButton: .default(Text("OK"))
-                          
-                    )
-                }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.showingAlert = true
+            }
+            .alert(isPresented: $showingAlert) {
+                // TODO: 国际化
+                Alert(title: Text("Tip"), message: Text("GauGe Availability: watchOS"), dismissButton: .default(Text("OK"))
+                      
+                )
+            }
             NavigationLink(destination: LabelPage()) {
                 Text(verbatim: "Label")
             }

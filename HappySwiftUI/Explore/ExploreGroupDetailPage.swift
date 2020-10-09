@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct ExploreGroupDetailPage: View {
-    var group: Explore.ExploreGroup
-    @State private var showSafari = false
+    @EnvironmentObject var languages: LanguagesData
     
-    @State private var showingActionSheet = false
+    var group: Explore.ExploreGroup
+    @State private var tapSelectedItem: Explore.ExploreItem?
+    @State private var longPressSelectedItem: Explore.ExploreItem?
     
     var body: some View {
         List {
@@ -27,27 +28,30 @@ struct ExploreGroupDetailPage: View {
                     }
                     .padding(.vertical, 2)
                     .onTapGesture {
-                        self.showSafari.toggle()
+                        self.tapSelectedItem = item
                     }
                     .onLongPressGesture {
                         TapicEngine.shared.impact.feedback(style: .light)
-                        self.showingActionSheet.toggle()
-                    }
-                    .sheet(isPresented: $showSafari) {
-                        SafariView(url: URL(string: item.url)!)
-                    }
-                    .actionSheet(isPresented: $showingActionSheet) {
-                        ActionSheet(title: Text("Star it"), buttons: [
-                            .default(Text("Favor")) {
-                            },
-                            .cancel()
-                        ])
+                        self.longPressSelectedItem = item
                     }
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
-        
+        .actionSheet(item: $longPressSelectedItem) { item in
+            ActionSheet(title: Text(Localizable.chooseOpenWay, bundle: languages.bundle), buttons: [
+                .default(Text(Localizable.embeddedSafari, bundle: languages.bundle)) {
+                    self.tapSelectedItem = item
+                },
+                .default(Text(Localizable.universalLinks, bundle: languages.bundle)) {
+                    UIApplication.shared.open(URL(string: item.url)!, options: [:], completionHandler: nil)
+                },
+                .cancel()
+            ])
+        }
+        .sheet(item: $tapSelectedItem) { item in
+            SafariView(url: URL(string: item.url)!)
+        }
         .navigationBarTitle(Text(verbatim: group.source), displayMode: .inline)
     }
 }
