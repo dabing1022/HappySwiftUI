@@ -1,34 +1,49 @@
 PODS:
   - Highlightr (1.1.0)
-  - Realm (4.3.2):
-    - Realm/Headers (= 4.3.2)
-  - Realm/Headers (4.3.2)
-  - RealmSwift (4.3.2):
-    - Realm (= 4.3.2)
+  - Kingfisher (6.2.1)
+  - Realm (10.7.2):
+    - Realm/Headers (= 10.7.2)
+  - Realm/Headers (10.7.2)
+  - RealmSwift (10.7.2):
+    - Realm (= 10.7.2)
 
 DEPENDENCIES:
-  - "Highlightr (from `git@github.com:brunophilipe/Highlightr.git`)"
-  - RealmSwift
+  - "Highlightr (from `git@github.com:brunophilipe/Highlightr.git`, branch `master`)"
+  - "Kingfisher (from `git@github.com:onevcat/Kingfisher.git`, branch `master`)"
+  - "RealmSwift (from `git@github.com:realm/realm-cocoa.git`, branch `master`)"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Realm
-    - RealmSwift
 
 EXTERNAL SOURCES:
   Highlightr:
+    :branch: master
     :git: "git@github.com:brunophilipe/Highlightr.git"
+  Kingfisher:
+    :branch: master
+    :git: "git@github.com:onevcat/Kingfisher.git"
+  RealmSwift:
+    :branch: master
+    :git: "git@github.com:realm/realm-cocoa.git"
 
 CHECKOUT OPTIONS:
   Highlightr:
-    :commit: 437d4302ba85faeeaa75ba47939d066fdfc101a5
+    :commit: 2dd0227854c40edf7522e095089c94e9914c4b91
     :git: "git@github.com:brunophilipe/Highlightr.git"
+  Kingfisher:
+    :commit: bbc4bc4def7eb05a7ba8e1219f80ee9be327334e
+    :git: "git@github.com:onevcat/Kingfisher.git"
+  RealmSwift:
+    :commit: d6ebfbfea30a4a9c2f6df6177de2374e561046bc
+    :git: "git@github.com:realm/realm-cocoa.git"
 
 SPEC CHECKSUMS:
   Highlightr: 09ddfc99e24e4ebd81dd711f712f1620f199f8fa
-  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
-  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
+  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
+  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
 
-PODFILE CHECKSUM: 9ac27a3a3fe60ccc14a75715959c1532ffa8d70e
+PODFILE CHECKSUM: d68cc19b82d40dead79a0a6a054cda55ad20f924
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.10.0

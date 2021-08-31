@@ -86,6 +86,7 @@
 		BD1AA6AD2503C65500BE5BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD1AA6AF2503C65500BE5BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD1AA6B62503CC8B00BE5BC5 /* TutorialHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomePage.swift; sourceTree = "<group>"; };
+		BD57FF6C26DDBDEC00F62AD2 /* HappySwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappySwiftUI.entitlements; sourceTree = "<group>"; };
 		BD6B60382503D1380096554E /* SettingsHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHomePage.swift; sourceTree = "<group>"; };
 		BD6B603B2503D55D0096554E /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		BD6B603D250513160096554E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 		BD1AA6A02503C65000BE5BC5 /* HappySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BD57FF6C26DDBDEC00F62AD2 /* HappySwiftUI.entitlements */,
 				BDD23221252757D0001336ED /* HappyKit */,
 				BDD7F1E52515065F00C28B05 /* Resources */,
 				BDC78BE2250E79B100F9C816 /* SupportingViews */,
@@ -726,9 +728,12 @@
 			baseConfigurationReference = 1D117159C5B7C9C78D9B4AED /* Pods-HappySwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HappySwiftUI/HappySwiftUI.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HappySwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 6RUU9PN7NF;
+				DEVELOPMENT_TEAM = D76N237B2J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HappySwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -737,8 +742,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.happycoding.HappySwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happycoding.swiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -749,6 +757,8 @@
 			baseConfigurationReference = D3645CC9E4C1273B8E2C1481 /* Pods-HappySwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HappySwiftUI/HappySwiftUI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HappySwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 6RUU9PN7NF;
@@ -762,6 +772,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happycoding.HappySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

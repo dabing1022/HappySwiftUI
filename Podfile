@@ -1,11 +1,10 @@
-source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '13.0'
 use_frameworks!
 
 target 'HappySwiftUI' do
-    pod 'Highlightr', :git => 'git@github.com:brunophilipe/Highlightr.git'
-    pod 'RealmSwift'
-    pod 'Kingfisher'
+    pod 'Highlightr', :git => 'git@github.com:brunophilipe/Highlightr.git', :branch => 'master'
+    pod 'RealmSwift', :git => 'git@github.com:realm/realm-cocoa.git', :branch => 'master'
+    pod 'Kingfisher', :git => 'git@github.com:onevcat/Kingfisher.git', :branch => 'master'
 end
 
 
